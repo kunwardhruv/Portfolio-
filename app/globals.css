@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Bricolage Grotesque';
+  --font-body: 'DM Sans';
+  --font-mono: 'JetBrains Mono';
+
+  /* DARK MODE (default) */
+  --bg: #0a0a0a;
+  --bg2: #0f0f0f;
+  --text: #ffffff;
+  --text-muted: #ffffff;
+  --text-sub: #aaaaaa;
+  --border: #1e1e1e;
+  --card: #0f0f0f;
+  --nav-link: #ffffff;
+  --label-color: #f59e0b;
+}
+
+html.light {
+  --bg: #f5f5f0;
+  --bg2: #ebebeb;
+  --text: #0a0a0a;
+  --text-muted: #111111;
+  --text-sub: #444444;
+  --border: #d4d4d4;
+  --card: #ffffff;
+  --nav-link: #111111;
+  --label-color: #d97706;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* dot grid background */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none; z-index: 0;
+}
+html.light body::before {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at -10% -10%, rgba(245,158,11,0.05) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 110% 100%, rgba(245,158,11,0.03) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+.grain {
+  position: fixed; inset: 0; z-index: 1;
+  pointer-events: none; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main { position: relative; z-index: 2; }
+
+.label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--label-color);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.dot { color: #f59e0b; }
+
+.heading {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::selection { background: rgba(245,158,11,0.25); color: #fff; }
+
+/* ── LIGHT MODE ── */
+html.light body { background-color: #f5f5f0; color: #111; }
+html.light body::before { opacity: 0.2; }
+html.light body::after { opacity: 0.3; }
+html.light .grain { opacity: 0.015; }
+html.light nav { background-color: rgba(245,245,240,0.92) !important; border-color: #e0e0d8 !important; }
+html.light footer { border-color: #e0e0d8; }
+html.light footer a, html.light footer p, html.light footer div { color: #111 !important; }
+html.light .section-surface { background-color: #efefea; }
+
+/* ── BETTER FONT RENDERING ── */
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
