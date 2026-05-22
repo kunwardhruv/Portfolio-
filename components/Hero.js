@@ -87,7 +87,7 @@ export default function Hero() {
       </motion.p>
 
       {/* Name — "Dhruv. Singh" — Singh in ORANGE */}
-      <div ref={nameRef} style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(4rem, 10vw, 8.5rem)', lineHeight: 0.95, letterSpacing: '-0.03em', marginBottom: '1.75rem' }}>
+      <div ref={nameRef} style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(3rem, 12vw, 8.5rem)', lineHeight: 0.95, letterSpacing: '-0.03em', marginBottom: '1.75rem' }}>
         <span className="gw" style={{ color: '#ffffff' }}>Dhruv</span>
         <span style={{ color: '#f59e0b' }}>.</span>{' '}
         <span className="gw" style={{ color: '#f59e0b' }}>Singh</span>
@@ -107,7 +107,7 @@ export default function Hero() {
 
       {/* Buttons */}
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
-        style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+        style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
         <Btn href="/projects" variant="outline" isLink>VIEW WORK</Btn>
         <Btn href="/contact" variant="plain" isLink>CONTACT</Btn>
         <Btn href="https://github.com/kunwardhruv" variant="plain" external>RESUME ↗</Btn>

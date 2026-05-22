@@ -108,3 +108,11 @@ html.light .section-surface { background-color: #efefea; }
 
 /* ── BETTER FONT RENDERING ── */
 * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+@media (max-width: 768px) {
+  section { padding: 4rem 5% !important; }
+  .heading { letter-spacing: -0.02em !important; }
+}
+
+@media (max-width: 1024px) {
+  .hover-preview { display: none !important; }
+}

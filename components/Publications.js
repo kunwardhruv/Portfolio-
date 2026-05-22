@@ -79,7 +79,7 @@ function PaperModal({ paper, onClose }) {
         exit={{ scale: 0.9, opacity: 0, y: 30 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         onClick={e => e.stopPropagation()}
-        style={{ width: '100%', maxWidth: 620, borderRadius: 14, overflow: 'hidden', border: '1px solid #2a2a2a', boxShadow: '0 40px 120px rgba(0,0,0,0.9)' }}>
+        style={{ width: '100%', maxWidth: 'min(620px, 95vw)', borderRadius: 14, overflow: 'hidden', border: '1px solid #2a2a2a', boxShadow: '0 40px 120px rgba(0,0,0,0.9)' }}>
 
         {/* Title bar */}
         <div style={{ backgroundColor: '#1c1c1c', padding: '0.85rem 1.25rem', display: 'flex', alignItems: 'center', gap: '0.6rem', borderBottom: '1px solid #2a2a2a' }}>
@@ -179,14 +179,14 @@ function PaperRow({ paper, index, inView, onOpen }) {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}>
         <div style={{ height: 1, backgroundColor: '#1e1e1e' }} />
-        <motion.div
+          <motion.div
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
           animate={{ x: hovered ? 8 : 0 }}
           transition={{ duration: 0.25 }}
           onClick={() => onOpen(paper)}
-          style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '2rem', padding: '2rem 0', alignItems: 'center', cursor: 'pointer' }}>
-          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', color: hovered ? paper.accent : 'rgba(245,158,11,0.12)', lineHeight: 1, minWidth: '2.5rem', transition: 'color 0.3s' }}>
+          style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1rem', padding: '2rem 0', alignItems: 'center', cursor: 'pointer' }}>
+          <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem', color: hovered ? paper.accent : 'rgba(245,158,11,0.12)', lineHeight: 1, minWidth: '2.5rem', transition: 'color 0.3s' }}>
             {paper.num}
           </span>
           <div>

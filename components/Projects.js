@@ -115,7 +115,7 @@ function TerminalModal({ project, onClose }) {
         exit={{ scale: 0.9, opacity: 0, y: 30 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         onClick={e => e.stopPropagation()}
-        style={{ width: '100%', maxWidth: 620, borderRadius: 14, overflow: 'hidden', border: '1px solid #2a2a2a', boxShadow: '0 40px 120px rgba(0,0,0,0.9)' }}>
+            style={{ width: '100%', maxWidth: 'min(620px, 95vw)', borderRadius: 14, overflow: 'hidden', border: '1px solid #2a2a2a', boxShadow: '0 40px 120px rgba(0,0,0,0.9)' }}>
 
         {/* macOS title bar */}
         <div style={{ backgroundColor: '#1c1c1c', padding: '0.85rem 1.25rem', display: 'flex', alignItems: 'center', gap: '0.6rem', borderBottom: '1px solid #2a2a2a' }}>
@@ -232,6 +232,7 @@ function ProjectRow({ project, index, onOpen }) {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="hover-preview"
             style={{ overflow: 'hidden' }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}>

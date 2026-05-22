@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer style={{ borderTop: '1px solid var(--border)', padding: '3rem 5% 2rem', position: 'relative', zIndex: 2, backgroundColor: 'var(--bg)' }}>
       {/* Top: Logo + Social icons */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem', marginBottom: '3rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '2rem' }}>
         {/* Logo */}
         <div>
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: '#f59e0b', letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         {/* Social icon buttons — proper SVG icons */}
-        <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
           {SOCIALS.map(s => (
             <a key={s.label} href={s.href} target={s.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer" title={s.label}
               style={{ width: 44, height: 44, border: '1px solid var(--border)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-sub)', textDecoration: 'none', transition: 'all 0.2s' }}
@@ -60,8 +60,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom: Copyright + Nav */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--text-sub)', letterSpacing: '0.1em' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border)' }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text-sub)', letterSpacing: '0.1em' }}>
           © 2026 DHRUV SINGH. ALL RIGHTS RESERVED.
         </p>
         <div style={{ display: 'flex', gap: '1.5rem' }}>

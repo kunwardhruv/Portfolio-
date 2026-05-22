@@ -54,7 +54,7 @@ export default function About() {
 
       {/* Stats */}
       <motion.div initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.3 }}
-        style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap', paddingTop: '3rem', borderTop: '1px solid #1e1e1e' }}>
+        style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', paddingTop: '3rem', borderTop: '1px solid #1e1e1e' }}>
         {[
           { num: 2, suffix: '+', label: 'Internships Completed' },
           { num: 6, suffix: '+', label: 'Projects Deployed' },
@@ -62,7 +62,7 @@ export default function About() {
           { num: 95, suffix: '%+', label: 'YOLO Detection Accuracy' },
         ].map(s => (
           <div key={s.label}>
-            <div className="heading" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '0.5rem' }}>
+            <div className="heading" style={{ fontSize: 'clamp(2rem, 8vw, 4rem)', marginBottom: '0.5rem' }}>
               <Counter target={s.num} suffix={s.suffix} />
             </div>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#ffffff' }}>

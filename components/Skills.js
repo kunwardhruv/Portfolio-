@@ -97,7 +97,7 @@ export default function Skills() {
         {categories.map((cat) => (
           <div key={cat.label}>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#444', marginBottom: '1.25rem' }}>{cat.label}</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(175px, 1fr))', gap: '0.75rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '0.75rem' }}>
               {cat.skills.map((skill, i) => <SkillCard key={skill.name} {...skill} index={i} />)}
             </div>
           </div>
