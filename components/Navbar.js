@@ -93,13 +93,17 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.2 }}
-            style={{ position: 'absolute', top: '100%', left: 0, right: 0, backgroundColor: dark ? '#0d0d0d' : '#f0f0eb', borderBottom: '1px solid var(--border)', padding: '1.5rem 5%', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            style={{ position: 'fixed', top: '72px', left: 0, right: 0, bottom: 0, zIndex: 110, backgroundColor: dark ? '#0d0d0d' : '#f0f0eb', borderTop: '1px solid var(--border)', padding: '1.5rem 5% 2rem', display: 'flex', flexDirection: 'column', gap: '1.2rem', boxShadow: '0 16px 40px rgba(0,0,0,0.18)' }}>
             {links.map(link => (
               <Link key={link.label} href={link.href} onClick={() => setMenuOpen(false)}
-                style={{ color: isActive(link.href) ? '#f59e0b' : '#ffffff', textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 500 }}>
+                style={{ color: isActive(link.href) ? '#f59e0b' : dark ? '#ffffff' : '#111111', textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: '1.05rem', fontWeight: 600, padding: '0.75rem 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                 {link.label}
               </Link>
             ))}
+            <a href="mailto:kunwarrdhruv@gmail.com" onClick={() => setMenuOpen(false)}
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '100%', marginTop: '0.5rem', padding: '0.85rem 0', borderRadius: '0.5rem', border: '1px solid rgba(245,158,11,0.5)', backgroundColor: dark ? '#111111' : '#ffffff', color: dark ? '#f59e0b' : '#111111', fontFamily: 'var(--font-mono)', fontSize: '0.92rem', textDecoration: 'none', fontWeight: 600 }}>
+              HIRE ME
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
